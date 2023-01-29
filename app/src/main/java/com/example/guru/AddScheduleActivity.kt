@@ -1,12 +1,10 @@
-package com.example.myapplication
+package com.example.guru
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText

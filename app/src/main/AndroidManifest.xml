@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,6 +22,54 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+        <activity
+            android:name=".PersonalInfoActivity"
+            android:exported="false"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".CPOLActivity"
+            android:exported="false"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".AddScheduleActivity"
+            android:exported="false"
+            android:parentActivityName=".ScheduleActivity" />
+        <activity
+            android:name=".AddInoculationActivity"
+            android:exported="false"
+            android:parentActivityName=".InoculationHistoryActivity" />
+        <activity
+            android:name=".AddDataActivity"
+            android:exported="false"
+            android:parentActivityName=".SettingActivity" />
+        <activity
+            android:name=".ScheduleActivity"
+            android:exported="false"
+            android:parentActivityName=".AnimalDetailActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".InoculationHistoryActivity"
+            android:exported="false"
+            android:parentActivityName=".AnimalDetailActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AnimalDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".SettingActivity">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

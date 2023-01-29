@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.guru
 
 import android.Manifest
 import android.content.Intent
@@ -16,7 +16,7 @@ class BeforeSettingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_before_setting)
 
         btnMove = findViewById<Button>(R.id.move_btn)
 

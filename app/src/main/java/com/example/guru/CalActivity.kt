@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.guru
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -32,7 +32,7 @@ class CalActivity : AppCompatActivity() {
         save_Btn = findViewById(R.id.save_Btn)
         cha_Btn = findViewById(R.id.cha_Btn)
         del_Btn= findViewById(R.id.del_Btn)
-        title = findViewById(R.id.title)
+        //title = findViewById(R.id.title)
         contextEditText = findViewById(R.id.contextEditText)
         textView2 = findViewById(R.id.textView2)
 

@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.guru
 
 import android.view.LayoutInflater
 import android.view.View

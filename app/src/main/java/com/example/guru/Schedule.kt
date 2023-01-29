@@ -1,6 +1,4 @@
-package com.example.myapplication
-
-import android.net.Uri
+package com.example.guru
 
 var scheduleList = ArrayList<Schedule>()
 

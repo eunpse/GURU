@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.guru
 
 import android.net.Uri
 

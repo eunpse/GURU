@@ -1,8 +1,9 @@
-package com.example.myapplication
+package com.example.guru
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
+import com.example.guru.R
 
 class CPOLActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

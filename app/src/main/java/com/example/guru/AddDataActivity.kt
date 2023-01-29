@@ -1,20 +1,13 @@
-package com.example.myapplication
+package com.example.guru
 
-import android.Manifest
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
-import android.text.Editable
 import android.text.TextUtils
-import android.text.TextWatcher
-import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.CheckBox
@@ -24,16 +17,11 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.net.toUri
 import java.util.Calendar
 
-class AddDataActivity : AppCompatActivity(), AnimalIDListener  {
+class AddDataActivity : AppCompatActivity(), AnimalIDListener {
 
     //DB
     lateinit var myHelper: MyDBHelper

@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.guru
 
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -7,15 +7,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.guru.R
-import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
+
+    lateinit var register_button: Button
+    lateinit var username: TextView
+    lateinit var password: TextView
+    lateinit var password_check: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        register_button = findViewById(R.id.register_button)
+        username = findViewById(R.id.username)
+        password = findViewById(R.id.password)
+        password_check = findViewById(R.id.password_check)
 
         //회원가입 버튼 클릭
         register_button.setOnClickListener {

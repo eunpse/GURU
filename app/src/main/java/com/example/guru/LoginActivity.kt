@@ -1,4 +1,4 @@
-package com.example.project
+package com.example.guru
 
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -7,13 +7,25 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+
+    lateinit var login_button: Button
+    lateinit var username: TextView
+    lateinit var password: TextView
+    lateinit var register_button: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        login_button = findViewById(R.id.login_button)
+        username = findViewById(R.id.username)
+        password = findViewById(R.id.password)
+        register_button = findViewById(R.id.register_button)
 
         //로그인 버튼 클릭
         login_button.setOnClickListener{

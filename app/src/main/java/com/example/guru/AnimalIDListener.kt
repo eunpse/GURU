@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.guru
 
 //아이디 얻기
 interface AnimalIDListener {
