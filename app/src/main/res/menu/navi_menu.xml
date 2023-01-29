@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_calendar"
+        android:title="일정"
+        android:icon="@drawable/calendar"/>
+
+    <item
+        android:id="@+id/menu_dog_note"
+        android:icon="@drawable/dog"
+        android:title="강아지 수첩"/>
+
+    <item
+        android:id="@+id/menu_setting"
+        android:title="설정"
+        android:icon="@drawable/settings"/>
+</menu>
