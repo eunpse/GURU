@@ -15,10 +15,9 @@ import com.example.guru.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     lateinit var btnMove: Button
-
-    // 프레그먼트 선언
-
-    lateinit var binding: ActivityMainBinding
+    lateinit var calendar_btn: Button
+    lateinit var dog_note_btn: Button
+    lateinit var setting_btn: Button
 
     companion object {
 
@@ -30,33 +29,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         Log.d(TAG, "MainActivity - onCreate() called")
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        // 레이아웃과 연결
-        setContentView(R.layout.activity_main)
-        setContentView(binding.root)
-
-        val bottomBar = binding.bnvMain
-
-        bottomBar.setOnItemSelectedListener { item ->
-            Log.d(TAG,"MainActivity - setOnItemSelectedListener() called")
-            changeFragment(
-                when (item.itemId) {
-                    R.id.menu_calendar-> {
-                        CalendarFragment()
-                    }
-                    R.id.menu_setting->{
-                        SettingFragment()
-                    }
-                    else -> {
-                        DogNoteFragment()
-                    }
-                }
-            )
-            true
-        }
-        bottomBar.selectedItemId = R.id.menu_dog_note
-
         btnMove = findViewById<Button>(R.id.move_btn)
+        calendar_btn = findViewById<Button>(R.id.calendar_btn)
+        dog_note_btn = findViewById<Button>(R.id.dog_note_btn)
+        setting_btn = findViewById<Button>(R.id.setting_btn)
 
         btnMove.setOnClickListener {
             //저장소 권한 설정
@@ -69,13 +45,21 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-    }
 
-    private fun changeFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fl_container, fragment)
-            .commit()
+        calendar_btn.setOnClickListener {
+            var intent = Intent(this, CalActivity::class.java)
+            startActivity(intent)
+        }
+
+        dog_note_btn.setOnClickListener {
+            var intent = Intent(this, CalActivity::class.java)
+            startActivity(intent)
+        }
+
+        setting_btn.setOnClickListener {
+            var intent = Intent(this, SettingActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     //저장소 권한 얻기

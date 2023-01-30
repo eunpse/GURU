@@ -31,8 +31,7 @@ class SettingActivity : AppCompatActivity(), AnimalAdapter.AnimalListener {
     lateinit var userPhoneNum: TextView
 
     //기타 설정 텍스트 버튼
-    lateinit var personalTextBtn: TextView
-    lateinit var opensourceTextBtn: TextView
+    lateinit var calBtn: TextView
     lateinit var logoutTextBtn: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +40,13 @@ class SettingActivity : AppCompatActivity(), AnimalAdapter.AnimalListener {
 
         //액션바 설정
         val ac: ActionBar? = supportActionBar
-        ac?.title = "설정"
+        ac?.title = "홈"
 
         myHelper = MyDBHelper(this)
         userName = findViewById<TextView>(R.id.user_name)
         userPhoneNum = findViewById<TextView>(R.id.user_phone_num)
         newAnimalAdd = findViewById<FloatingActionButton>(R.id.new_animal_insert)
-        personalTextBtn = findViewById<TextView>(R.id.personal_info_terms_and_conditions)
-        opensourceTextBtn = findViewById<TextView>(R.id.opensource_license)
+        calBtn = findViewById<TextView>(R.id.opensource_license)
         logoutTextBtn = findViewById<TextView>(R.id.logout)
 
         //유저 이름 설정
@@ -56,20 +54,14 @@ class SettingActivity : AppCompatActivity(), AnimalAdapter.AnimalListener {
         //유저 핸드폰 번호 설정
         //userPhoneNum.text = ""
 
+        //일정 등록하러가기
+        calBtn.setOnClickListener {
+            var intent = Intent(this, CalActivity::class.java)
+            startActivity(intent)
+        }
         //새로운 반려동물 등록 액티비티로 이동
         newAnimalAdd.setOnClickListener{
             var intent = Intent(this, AddDataActivity::class.java)
-            startActivity(intent)
-        }
-
-        //개인정보이용약관 액티비티로 이동
-        personalTextBtn.setOnClickListener {
-            var intent = Intent(this, PersonalInfoActivity::class.java)
-            startActivity(intent)
-        }
-        //오픈소스라이센스 액티비티로 이동
-        opensourceTextBtn.setOnClickListener {
-            var intent = Intent(this, CPOLActivity::class.java)
             startActivity(intent)
         }
         //로그아웃 버튼

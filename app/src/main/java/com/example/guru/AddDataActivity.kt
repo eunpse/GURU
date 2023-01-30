@@ -1,7 +1,9 @@
 package com.example.guru
 
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.net.Uri
@@ -19,6 +21,8 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBar
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import java.util.Calendar
 
 class AddDataActivity : AppCompatActivity(), AnimalIDListener {
@@ -113,6 +117,16 @@ class AddDataActivity : AppCompatActivity(), AnimalIDListener {
 
         //이미지 가져오기
         uploadImgBtn.setOnClickListener {
+            //저장소 권한 설정
+            if(ContextCompat.checkSelfPermission(this,
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                getPermission()
+            }
+            else{
+                var intent = Intent(this, SettingActivity::class.java)
+                startActivity(intent)
+            }
+
             var intent: Intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.type = "image/*"
             startForResult.launch(Intent.createChooser(intent, "Img"))
@@ -174,6 +188,27 @@ class AddDataActivity : AppCompatActivity(), AnimalIDListener {
                 intent.putExtra(ANIMAL_ID_EXTRA, animalID)
                 startActivity(intent)
             }
+        }
+    }
+
+    //저장소 권한 얻기
+    private fun getPermission(){
+        //허용안함을 눌렀던 경우
+        if(ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)){
+            var dlg = AlertDialog.Builder(this)
+            dlg.setTitle("권한이 필요한 이유")
+            dlg.setMessage("사진 정보를 얻기 위해서는 외부 저장소 권한이 필수로 필요합니다")
+            dlg.setPositiveButton("확인"){ _, _ ->
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1000)}
+            dlg.setNegativeButton("취소", null)
+            dlg.show()
+        }
+        //권한 부여
+        else{
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE), 1000)
         }
     }
 
