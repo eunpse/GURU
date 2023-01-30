@@ -123,13 +123,10 @@ class AddDataActivity : AppCompatActivity(), AnimalIDListener {
                 getPermission()
             }
             else{
-                var intent = Intent(this, SettingActivity::class.java)
-                startActivity(intent)
+                var intent: Intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                intent.type = "image/*"
+                startForResult.launch(Intent.createChooser(intent, "Img"))
             }
-
-            var intent: Intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-            intent.type = "image/*"
-            startForResult.launch(Intent.createChooser(intent, "Img"))
         }
 
         //성별 선택

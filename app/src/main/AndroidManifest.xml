@@ -23,16 +23,8 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:exported="false" />
-        <activity
-            android:name=".PersonalInfoActivity"
-            android:exported="false"
-            android:parentActivityName=".SettingActivity" />
-        <activity
-            android:name=".CPOLActivity"
-            android:exported="false"
-            android:parentActivityName=".SettingActivity" />
         <activity
             android:name=".AddScheduleActivity"
             android:exported="false"
@@ -74,7 +66,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
